@@ -1,0 +1,29 @@
+<main>
+  <form (submit)="onSubmit($event)">
+    <app-input-text [field]="loginForm.name" [params]="loginParams()['name']" />
+    <app-input-email [field]="loginForm.email" [params]="loginParams()['email']" />
+    <app-input-password [field]="loginForm.password" [params]="loginParams()['password']" />
+    <app-input-date [field]="loginForm.eventDate" [params]="loginParams()['eventDate']" />
+    <app-input-time [field]="loginForm.eventTime" [params]="loginParams()['eventTime']" />
+    <app-textarea [field]="loginForm.message" [params]="loginParams()['message']" />
+    <p>Password length: {{ loginForm.password().value().length }}</p>
+    <p>Event date: {{ loginForm.eventDate().value() }}</p>
+    <p>Event time: {{ loginForm.eventTime().value() }}</p>
+    <button type="submit">Submit</button>
+  </form>
+  <button (click)="changeForm()">Change Form</button>
+
+  <button (click)="requiredForm()">required Form</button>
+</main>
+<div>
+  <h2>Form</h2>
+  <pre>
+  {{ loginForm().value() | json }}
+</pre
+  >
+  <h2>Form Params</h2>
+  <pre>
+  {{ loginParams() | json }}
+</pre
+  >
+</div>

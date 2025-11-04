@@ -1,0 +1,13 @@
+<app-field-template [field]="field()" [params]="params()">
+  <ng-template>
+    <input
+      type="email"
+      [field]="field()"
+      [attr.id]="params().id"
+      [attr.placeholder]="params().placeholder"
+      [attr.disabled]="params().disabled"
+      [attr.readonly]="params().readonly"
+      [attr.autocomplete]="'noop'"
+    />
+  </ng-template>
+</app-field-template>
