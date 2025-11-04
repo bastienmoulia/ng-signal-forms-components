@@ -7,7 +7,7 @@ interface InputDateParams extends FieldParams {
 }
 
 @Component({
-  selector: 'lib-input-date',
+  selector: 'ngsf-input-date',
   imports: [Field, FieldTemplate],
   templateUrl: './input-date.html',
 })

@@ -7,7 +7,7 @@ interface InputEmailParams extends FieldParams {
 }
 
 @Component({
-  selector: 'lib-input-email',
+  selector: 'ngsf-input-email',
   imports: [Field, FieldTemplate],
   templateUrl: './input-email.html',
 })

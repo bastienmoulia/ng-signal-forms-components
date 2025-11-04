@@ -7,7 +7,7 @@ interface InputPasswordParams extends FieldParams {
 }
 
 @Component({
-  selector: 'lib-input-password',
+  selector: 'ngsf-input-password',
   imports: [Field, FieldTemplate],
   templateUrl: './input-password.html',
 })

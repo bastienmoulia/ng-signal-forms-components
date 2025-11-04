@@ -36,8 +36,8 @@ import { InputText, InputEmail, FieldParams } from 'ng-signal-forms';
   imports: [InputText, InputEmail],
   template: `
     <form (submit)="onSubmit($event)">
-      <lib-input-text [field]="myForm.name" [params]="params()['name']" />
-      <lib-input-email [field]="myForm.email" [params]="params()['email']" />
+      <ngsf-input-text [field]="myForm.name" [params]="params()['name']" />
+      <ngsf-input-email [field]="myForm.email" [params]="params()['email']" />
       <button type="submit">Submit</button>
     </form>
   `

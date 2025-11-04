@@ -7,7 +7,7 @@ interface InputTextParams extends FieldParams {
 }
 
 @Component({
-  selector: 'lib-input-text',
+  selector: 'ngsf-input-text',
   imports: [Field, FieldTemplate],
   templateUrl: './input-text.html',
 })
