@@ -7,7 +7,7 @@ interface InputTimeParams extends FieldParams {
 }
 
 @Component({
-  selector: 'app-input-time',
+  selector: 'lib-input-time',
   imports: [Field, FieldTemplate],
   templateUrl: './input-time.html',
 })

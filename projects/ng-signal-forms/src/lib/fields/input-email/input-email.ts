@@ -2,16 +2,16 @@ import { Component, input } from '@angular/core';
 import { Field } from '@angular/forms/signals';
 import { FieldParams, FieldTemplate } from '../../field-template/field-template';
 
-interface InputDateParams extends FieldParams {
-  // Additional properties specific to the date input can be added here
+interface InputEmailParams extends FieldParams {
+  // Additional properties specific to the email input can be added here
 }
 
 @Component({
-  selector: 'app-input-date',
+  selector: 'lib-input-email',
   imports: [Field, FieldTemplate],
-  templateUrl: './input-date.html',
+  templateUrl: './input-email.html',
 })
-export class InputDate {
+export class InputEmail {
   field = input.required<any>();
-  params = input<InputDateParams>({});
+  params = input<InputEmailParams>({});
 }

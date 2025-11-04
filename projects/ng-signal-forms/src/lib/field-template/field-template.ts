@@ -11,7 +11,7 @@ export interface FieldParams {
 }
 
 @Component({
-  selector: 'app-field-template',
+  selector: 'lib-field-template',
   imports: [NgTemplateOutlet],
   templateUrl: './field-template.html',
 })

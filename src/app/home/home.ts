@@ -9,14 +9,14 @@ import {
   required,
   submit,
 } from '@angular/forms/signals';
-import { InputEmail } from '../fields/input-email/input-email';
-import { InputPassword } from '../fields/input-password/input-password';
 import { JsonPipe } from '@angular/common';
-import { InputTime } from '../fields/input-time/input-time';
-import { InputDate } from '../fields/input-date/input-date';
-import { Textarea } from '../fields/textarea/textarea';
-import { InputText } from '../fields/input-text/input-text';
-import { FieldParams } from '../field-template/field-template';
+import { InputEmail } from 'ng-signal-forms';
+import { InputPassword } from 'ng-signal-forms';
+import { InputTime } from 'ng-signal-forms';
+import { InputDate } from 'ng-signal-forms';
+import { Textarea } from 'ng-signal-forms';
+import { InputText } from 'ng-signal-forms';
+import { FieldParams } from 'ng-signal-forms';
 
 @Component({
   selector: 'app-home',

@@ -7,6 +7,11 @@
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
+    "paths": {
+      "ng-signal-forms": [
+        "./dist/ng-signal-forms"
+      ]
+    },
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "isolatedModules": true,
@@ -28,6 +33,12 @@
     },
     {
       "path": "./tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/ng-signal-forms/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/ng-signal-forms/tsconfig.spec.json"
     }
   ]
 }

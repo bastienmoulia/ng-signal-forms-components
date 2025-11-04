@@ -1,7 +1,7 @@
-<app-field-template [field]="field()" [params]="params()">
+<lib-field-template [field]="field()" [params]="params()">
   <ng-template>
     <input
-      type="date"
+      type="time"
       [field]="field()"
       [attr.id]="params().id"
       [attr.placeholder]="params().placeholder"
@@ -10,4 +10,4 @@
       [attr.autocomplete]="'noop'"
     />
   </ng-template>
-</app-field-template>
+</lib-field-template>

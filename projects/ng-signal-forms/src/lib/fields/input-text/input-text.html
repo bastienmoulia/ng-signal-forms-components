@@ -1,14 +1,13 @@
-<app-field-template [field]="field()" [params]="params()">
+<lib-field-template [field]="field()" [params]="params()">
   <ng-template>
-    <textarea
+    <input
+      type="text"
       [field]="field()"
       [attr.id]="params().id"
       [attr.placeholder]="params().placeholder"
       [attr.disabled]="params().disabled"
       [attr.readonly]="params().readonly"
-      [attr.rows]="params().rows"
-      [attr.cols]="params().cols"
       [attr.autocomplete]="'noop'"
-    ></textarea>
+    />
   </ng-template>
-</app-field-template>
+</lib-field-template>

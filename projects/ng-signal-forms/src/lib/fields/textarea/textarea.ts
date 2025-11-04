@@ -9,7 +9,7 @@ interface TextareaParams extends FieldParams {
 }
 
 @Component({
-  selector: 'app-textarea',
+  selector: 'lib-textarea',
   imports: [Field, FieldTemplate],
   templateUrl: './textarea.html',
 })

@@ -1,11 +1,11 @@
 <main>
   <form (submit)="onSubmit($event)">
-    <app-input-text [field]="loginForm.name" [params]="loginParams()['name']" />
-    <app-input-email [field]="loginForm.email" [params]="loginParams()['email']" />
-    <app-input-password [field]="loginForm.password" [params]="loginParams()['password']" />
-    <app-input-date [field]="loginForm.eventDate" [params]="loginParams()['eventDate']" />
-    <app-input-time [field]="loginForm.eventTime" [params]="loginParams()['eventTime']" />
-    <app-textarea [field]="loginForm.message" [params]="loginParams()['message']" />
+    <lib-input-text [field]="loginForm.name" [params]="loginParams()['name']" />
+    <lib-input-email [field]="loginForm.email" [params]="loginParams()['email']" />
+    <lib-input-password [field]="loginForm.password" [params]="loginParams()['password']" />
+    <lib-input-date [field]="loginForm.eventDate" [params]="loginParams()['eventDate']" />
+    <lib-input-time [field]="loginForm.eventTime" [params]="loginParams()['eventTime']" />
+    <lib-textarea [field]="loginForm.message" [params]="loginParams()['message']" />
     <p>Password length: {{ loginForm.password().value().length }}</p>
     <p>Event date: {{ loginForm.eventDate().value() }}</p>
     <p>Event time: {{ loginForm.eventTime().value() }}</p>
