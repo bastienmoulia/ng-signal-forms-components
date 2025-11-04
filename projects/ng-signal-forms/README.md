@@ -1,19 +1,66 @@
 # NgSignalForms
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.0-next.0.
+An Angular library providing form field components that work with Angular's signal-based forms.
 
-## Code scaffolding
+## Components
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+This library includes the following form field components:
+
+- `InputText` - Text input field
+- `InputEmail` - Email input field
+- `InputPassword` - Password input field
+- `InputDate` - Date picker field
+- `InputTime` - Time picker field
+- `Textarea` - Multi-line text area field
+- `FieldTemplate` - Base template component for all field types
+
+## Installation
+
+Install the library in your Angular project:
 
 ```bash
-ng generate component component-name
+npm install ng-signal-forms
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Usage
 
-```bash
-ng generate --help
+Import the components you need in your Angular component:
+
+```typescript
+import { Component, signal } from '@angular/core';
+import { form, required, email } from '@angular/forms/signals';
+import { InputText, InputEmail, FieldParams } from 'ng-signal-forms';
+
+@Component({
+  selector: 'app-my-form',
+  imports: [InputText, InputEmail],
+  template: `
+    <form (submit)="onSubmit($event)">
+      <lib-input-text [field]="myForm.name" [params]="params()['name']" />
+      <lib-input-email [field]="myForm.email" [params]="params()['email']" />
+      <button type="submit">Submit</button>
+    </form>
+  `
+})
+export class MyFormComponent {
+  model = signal({ name: '', email: '' });
+  
+  params = signal<{ [key: string]: FieldParams }>({
+    name: { label: 'Name', placeholder: 'Enter your name' },
+    email: { label: 'Email', placeholder: 'Enter your email' }
+  });
+  
+  myForm = form(this.model, (p) => {
+    required(p.name, { message: 'Name is required' });
+    required(p.email, { message: 'Email is required' });
+    email(p.email, { message: 'Enter a valid email address' });
+  });
+  
+  onSubmit(event: Event) {
+    event.preventDefault();
+    // Handle form submission
+  }
+}
 ```
 
 ## Building
@@ -26,38 +73,14 @@ ng build ng-signal-forms
 
 This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
 
-### Publishing the Library
-
-Once the project is built, you can publish your library by following these steps:
-
-1. Navigate to the `dist` directory:
-   ```bash
-   cd dist/ng-signal-forms
-   ```
-
-2. Run the `npm publish` command to publish your library to the npm registry:
-   ```bash
-   npm publish
-   ```
-
 ## Running unit tests
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+To execute unit tests, use the following command:
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+## License
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+MIT
