@@ -1,14 +1,13 @@
-import { Component, computed, effect, input } from '@angular/core';
-import { FieldParams } from '../field-template/field-template';
-import { FieldTree } from '@angular/forms/signals';
-import { InputText } from './input-text/input-text';
-import { InputEmail } from './input-email/input-email';
-import { InputDate } from './input-date/input-date';
-import { InputPassword } from './input-password/input-password';
-import { InputTime } from './input-time/input-time';
-import { Textarea } from './textarea/textarea';
+import { Component, computed, input } from '@angular/core';
+import { NgdsfFieldParams } from '../field-template/field-template';
+import { NgdsfInputText } from './input-text/input-text';
+import { NgdsfInputEmail } from './input-email/input-email';
+import { NgdsfInputDate } from './input-date/input-date';
+import { NgdsfInputPassword } from './input-password/input-password';
+import { NgdsfInputTime } from './input-time/input-time';
+import { NgdsfTextarea } from './textarea/textarea';
 
-export enum FieldType {
+export enum NgdsfFieldType {
   InputDate = 'input-date',
   InputEmail = 'input-email',
   InputPassword = 'input-password',
@@ -18,21 +17,28 @@ export enum FieldType {
   // Additional field types can be added here
 }
 
-export interface FieldParamsTyped extends FieldParams {
-  type: FieldType;
+export interface NgdsfFieldParamsTyped extends NgdsfFieldParams {
+  type: NgdsfFieldType;
 }
 
-export interface FormParams {
-  [key: string]: FieldParamsTyped;
+export interface NgdsfFormParams {
+  [key: string]: NgdsfFieldParamsTyped;
 }
 
 @Component({
-  selector: 'app-fields',
-  imports: [InputText, InputEmail, InputDate, InputPassword, InputTime, Textarea],
+  selector: 'ngdsf-fields',
+  imports: [
+    NgdsfInputText,
+    NgdsfInputEmail,
+    NgdsfInputDate,
+    NgdsfInputPassword,
+    NgdsfInputTime,
+    NgdsfTextarea,
+  ],
   templateUrl: './fields.html',
 })
-export class Fields {
-  params = input.required<{ [key: string]: FieldParamsTyped }>();
+export class NgdsfFields {
+  params = input.required<{ [key: string]: NgdsfFieldParamsTyped }>();
   form = input.required<any>();
 
   fieldsKeys = computed(() => {

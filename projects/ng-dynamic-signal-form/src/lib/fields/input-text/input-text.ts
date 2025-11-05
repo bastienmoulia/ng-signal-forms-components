@@ -1,17 +1,17 @@
 import { Component, input } from '@angular/core';
 import { Field } from '@angular/forms/signals';
-import { FieldParams, FieldTemplate } from '../../field-template/field-template';
+import { NgdsfFieldParams, NgdsfFieldTemplate } from '../../field-template/field-template';
 
-interface InputTextParams extends FieldParams {
+interface NgdsfInputTextParams extends NgdsfFieldParams {
   // Additional properties specific to the text input can be added here
 }
 
 @Component({
-  selector: 'app-input-text',
-  imports: [Field, FieldTemplate],
+  selector: 'ngdsf-input-text',
+  imports: [Field, NgdsfFieldTemplate],
   templateUrl: './input-text.html',
 })
-export class InputText {
+export class NgdsfInputText {
   field = input.required<any>();
-  params = input<InputTextParams>({});
+  params = input<NgdsfInputTextParams>({});
 }

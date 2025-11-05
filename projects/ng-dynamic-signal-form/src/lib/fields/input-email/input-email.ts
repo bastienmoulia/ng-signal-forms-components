@@ -1,17 +1,17 @@
 import { Component, input } from '@angular/core';
 import { Field } from '@angular/forms/signals';
-import { FieldParams, FieldTemplate } from '../../field-template/field-template';
+import { NgdsfFieldParams, NgdsfFieldTemplate } from '../../field-template/field-template';
 
-interface InputEmailParams extends FieldParams {
+interface NgdsfInputEmailParams extends NgdsfFieldParams {
   // Additional properties specific to the email input can be added here
 }
 
 @Component({
-  selector: 'app-input-email',
-  imports: [Field, FieldTemplate],
+  selector: 'ngdsf-input-email',
+  imports: [Field, NgdsfFieldTemplate],
   templateUrl: './input-email.html',
 })
-export class InputEmail {
+export class NgdsfInputEmail {
   field = input.required<any>();
-  params = input<InputEmailParams>({});
+  params = input<NgdsfInputEmailParams>({});
 }

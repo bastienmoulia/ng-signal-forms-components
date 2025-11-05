@@ -1,7 +1,7 @@
 import { NgTemplateOutlet } from '@angular/common';
 import { Component, contentChild, input, TemplateRef } from '@angular/core';
 
-export interface FieldParams {
+export interface NgdsfFieldParams {
   id?: string;
   label?: string;
   placeholder?: string;
@@ -15,9 +15,9 @@ export interface FieldParams {
   imports: [NgTemplateOutlet],
   templateUrl: './field-template.html',
 })
-export class FieldTemplate {
+export class NgdsfFieldTemplate {
   field = input.required<any>();
-  params = input.required<FieldParams>({});
+  params = input.required<NgdsfFieldParams>({});
 
   contentTemplate = contentChild(TemplateRef);
 }

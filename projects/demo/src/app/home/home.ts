@@ -1,7 +1,7 @@
 import { Component, inject, Injector, runInInjectionContext, signal } from '@angular/core';
 import { email, form, maxLength, pattern, required, submit } from '@angular/forms/signals';
 import { JsonPipe } from '@angular/common';
-import { NgdsfFormParams, NgdsfFieldType, NgdsfFields } from '../fields/fields';
+import { NgdsfFormParams, NgdsfFieldType, NgdsfFields } from 'ng-dynamic-signal-form';
 
 @Component({
   selector: 'app-home',

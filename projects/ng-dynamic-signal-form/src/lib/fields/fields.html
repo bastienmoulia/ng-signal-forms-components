@@ -1,14 +1,14 @@
 @for (fieldKey of fieldsKeys(); track $index) { @let param = params()[fieldKey]; @let field =
 form()[fieldKey]; @switch (param['type']) { @case ('input-text') {
-<app-input-text [field]="field" [params]="param" />
+<ngdsf-input-text [field]="field" [params]="param" />
 } @case ('input-email') {
-<app-input-email [field]="field" [params]="param" />
+<ngdsf-input-email [field]="field" [params]="param" />
 } @case ('input-password') {
-<app-input-password [field]="field" [params]="param" />
+<ngdsf-input-password [field]="field" [params]="param" />
 } @case ('input-date') {
-<app-input-date [field]="field" [params]="param" />
+<ngdsf-input-date [field]="field" [params]="param" />
 } @case ('input-time') {
-<app-input-time [field]="field" [params]="param" />
+<ngdsf-input-time [field]="field" [params]="param" />
 } @case ('textarea') {
-<app-textarea [field]="field" [params]="param" />
+<ngdsf-textarea [field]="field" [params]="param" />
 } @default { type not found } } }

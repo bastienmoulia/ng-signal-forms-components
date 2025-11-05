@@ -1,17 +1,17 @@
 import { Component, input } from '@angular/core';
 import { Field } from '@angular/forms/signals';
-import { FieldParams, FieldTemplate } from '../../field-template/field-template';
+import { NgdsfFieldParams, NgdsfFieldTemplate } from '../../field-template/field-template';
 
-interface InputTimeParams extends FieldParams {
+interface NgdsfInputTimeParams extends NgdsfFieldParams {
   // Additional properties specific to the time input can be added here
 }
 
 @Component({
-  selector: 'app-input-time',
-  imports: [Field, FieldTemplate],
+  selector: 'ngdsf-input-time',
+  imports: [Field, NgdsfFieldTemplate],
   templateUrl: './input-time.html',
 })
-export class InputTime {
+export class NgdsfInputTime {
   field = input.required<any>();
-  params = input<InputTimeParams>({});
+  params = input<NgdsfInputTimeParams>({});
 }

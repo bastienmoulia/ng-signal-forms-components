@@ -1,17 +1,17 @@
 import { Component, input } from '@angular/core';
-import { FieldParams, FieldTemplate } from '../../field-template/field-template';
+import { NgdsfFieldParams, NgdsfFieldTemplate } from '../../field-template/field-template';
 import { Field } from '@angular/forms/signals';
 
-interface InputPasswordParams extends FieldParams {
+interface NgdsfInputPasswordParams extends NgdsfFieldParams {
   // Additional properties specific to the password input can be added here
 }
 
 @Component({
-  selector: 'app-input-password',
-  imports: [Field, FieldTemplate],
+  selector: 'ngdsf-input-password',
+  imports: [Field, NgdsfFieldTemplate],
   templateUrl: './input-password.html',
 })
-export class InputPassword {
+export class NgdsfInputPassword {
   field = input.required<any>();
-  params = input<InputPasswordParams>({});
+  params = input<NgdsfInputPasswordParams>({});
 }

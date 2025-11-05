@@ -1,19 +1,19 @@
 import { Component, input } from '@angular/core';
 import { Field } from '@angular/forms/signals';
-import { FieldParams, FieldTemplate } from '../../field-template/field-template';
+import { NgdsfFieldParams, NgdsfFieldTemplate } from '../../field-template/field-template';
 
-interface TextareaParams extends FieldParams {
+interface NgdsfTextareaParams extends NgdsfFieldParams {
   rows?: number;
   cols?: number;
   // Additional properties specific to the textarea can be added here
 }
 
 @Component({
-  selector: 'app-textarea',
-  imports: [Field, FieldTemplate],
+  selector: 'ngdsf-textarea',
+  imports: [Field, NgdsfFieldTemplate],
   templateUrl: './textarea.html',
 })
-export class Textarea {
+export class NgdsfTextarea {
   field = input.required<any>();
-  params = input<TextareaParams>({});
+  params = input<NgdsfTextareaParams>({});
 }

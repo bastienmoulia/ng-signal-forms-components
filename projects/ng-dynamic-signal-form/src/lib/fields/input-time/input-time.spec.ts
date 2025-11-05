@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InputTime } from './input-time';
+import { NgdsfInputTime } from './input-time';
 
-describe('InputTime', () => {
-  let component: InputTime;
-  let fixture: ComponentFixture<InputTime>;
+describe('NgdsfInputTime', () => {
+  let component: NgdsfInputTime;
+  let fixture: ComponentFixture<NgdsfInputTime>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [InputTime],
+      imports: [NgdsfInputTime],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(InputTime);
+    fixture = TestBed.createComponent(NgdsfInputTime);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

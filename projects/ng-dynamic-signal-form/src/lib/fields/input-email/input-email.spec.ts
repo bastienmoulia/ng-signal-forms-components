@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InputEmail } from './input-email';
+import { NgdsfInputEmail } from './input-email';
 
-describe('InputEmail', () => {
-  let component: InputEmail;
-  let fixture: ComponentFixture<InputEmail>;
+describe('NgdsfInputEmail', () => {
+  let component: NgdsfInputEmail;
+  let fixture: ComponentFixture<NgdsfInputEmail>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [InputEmail]
+      imports: [NgdsfInputEmail]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(InputEmail);
+    fixture = TestBed.createComponent(NgdsfInputEmail);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
