@@ -2,6 +2,12 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.0-rc.0.
 
+## Demo
+
+A live demo of the components is available at: https://bastienmoulia.github.io/ng-signal-forms-components/
+
+The demo is automatically deployed to GitHub Pages when changes are pushed to the main branch.
+
 ## Development server
 
 To start a local development server, run:
