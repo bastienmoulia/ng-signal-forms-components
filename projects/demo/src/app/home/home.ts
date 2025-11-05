@@ -18,6 +18,7 @@ export class Home {
     password: '',
     eventDate: '',
     eventTime: '',
+    country: '',
     message: '',
   });
 
@@ -43,6 +44,18 @@ export class Home {
       label: 'Event Time',
       placeholder: 'Select a time',
     },
+    country: {
+      type: NgdsfFieldType.Select,
+      label: 'Country',
+      options: [
+        { value: '', label: 'Select a country' },
+        { value: 'us', label: 'United States' },
+        { value: 'uk', label: 'United Kingdom' },
+        { value: 'fr', label: 'France' },
+        { value: 'de', label: 'Germany' },
+        { value: 'es', label: 'Spain' },
+      ],
+    },
     message: {
       type: NgdsfFieldType.Textarea,
       label: 'Message',
@@ -62,6 +75,7 @@ export class Home {
     });
     required(p.eventDate, { message: 'Event date is required' });
     required(p.eventTime, { message: 'Event time is required' });
+    required(p.country, { message: 'Country is required' });
     required(p.message, { message: 'Message is required' });
     maxLength(p.message, 50, { message: 'Message cannot exceed 50 characters' });
   });
@@ -82,6 +96,7 @@ export class Home {
         password: 'newpassword',
         eventDate: '2023-01-01',
         eventTime: '12:00',
+        country: 'fr',
         message: 'New message',
       } as any);
     } else {
@@ -90,6 +105,7 @@ export class Home {
         password: 'newpassword',
         eventDate: '2023-01-01',
         eventTime: '12:00',
+        country: 'uk',
         message: 'New message',
       } as any);
     }

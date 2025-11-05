@@ -10,4 +10,5 @@ export * from './lib/fields/input-email/input-email';
 export * from './lib/fields/input-password/input-password';
 export * from './lib/fields/input-text/input-text';
 export * from './lib/fields/input-time/input-time';
+export * from './lib/fields/select/select';
 export * from './lib/fields/textarea/textarea';

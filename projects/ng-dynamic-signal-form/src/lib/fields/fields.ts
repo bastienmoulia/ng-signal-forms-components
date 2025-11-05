@@ -6,6 +6,7 @@ import { NgdsfInputDate } from './input-date/input-date';
 import { NgdsfInputPassword } from './input-password/input-password';
 import { NgdsfInputTime } from './input-time/input-time';
 import { NgdsfTextarea } from './textarea/textarea';
+import { NgdsfSelect } from './select/select';
 
 export enum NgdsfFieldType {
   InputDate = 'input-date',
@@ -13,6 +14,7 @@ export enum NgdsfFieldType {
   InputPassword = 'input-password',
   InputTime = 'input-time',
   InputText = 'input-text',
+  Select = 'select',
   Textarea = 'textarea',
   // Additional field types can be added here
 }
@@ -33,6 +35,7 @@ export interface NgdsfFormParams {
     NgdsfInputDate,
     NgdsfInputPassword,
     NgdsfInputTime,
+    NgdsfSelect,
     NgdsfTextarea,
   ],
   templateUrl: './fields.html',

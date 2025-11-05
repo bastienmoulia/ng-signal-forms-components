@@ -9,6 +9,8 @@ form()[fieldKey]; @switch (param['type']) { @case ('input-text') {
 <ngdsf-input-date [field]="field" [params]="param" />
 } @case ('input-time') {
 <ngdsf-input-time [field]="field" [params]="param" />
+} @case ('select') {
+<ngdsf-select [field]="field" [params]="param" />
 } @case ('textarea') {
 <ngdsf-textarea [field]="field" [params]="param" />
 } @default { type not found } } }
