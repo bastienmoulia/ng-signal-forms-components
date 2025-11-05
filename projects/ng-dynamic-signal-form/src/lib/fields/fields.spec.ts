@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Fields } from './fields';
+import { NgdsfFields } from './fields';
 
-describe('Fields', () => {
-  let component: Fields;
-  let fixture: ComponentFixture<Fields>;
+describe('NgdsfFields', () => {
+  let component: NgdsfFields;
+  let fixture: ComponentFixture<NgdsfFields>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Fields]
+      imports: [NgdsfFields]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Fields);
+    fixture = TestBed.createComponent(NgdsfFields);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

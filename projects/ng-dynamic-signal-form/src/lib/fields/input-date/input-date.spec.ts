@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InputDate } from './input-date';
+import { NgdsfInputDate } from './input-date';
 
-describe('InputDate', () => {
-  let component: InputDate;
-  let fixture: ComponentFixture<InputDate>;
+describe('NgdsfInputDate', () => {
+  let component: NgdsfInputDate;
+  let fixture: ComponentFixture<NgdsfInputDate>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [InputDate],
+      imports: [NgdsfInputDate],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(InputDate);
+    fixture = TestBed.createComponent(NgdsfInputDate);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

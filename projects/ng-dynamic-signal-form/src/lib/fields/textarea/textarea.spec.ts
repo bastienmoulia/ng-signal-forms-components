@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Textarea } from './textarea';
+import { NgdsfTextarea } from './textarea';
 
-describe('Textarea', () => {
-  let component: Textarea;
-  let fixture: ComponentFixture<Textarea>;
+describe('NgdsfTextarea', () => {
+  let component: NgdsfTextarea;
+  let fixture: ComponentFixture<NgdsfTextarea>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Textarea],
+      imports: [NgdsfTextarea],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Textarea);
+    fixture = TestBed.createComponent(NgdsfTextarea);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
