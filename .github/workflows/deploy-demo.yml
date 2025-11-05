@@ -15,6 +15,9 @@ concurrency:
   group: 'pages'
   cancel-in-progress: false
 
+env:
+  BASE_HREF: /ng-signal-forms-components/
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -54,7 +57,7 @@ jobs:
         run: npm run build -- ng-dynamic-signal-form
 
       - name: Build demo app
-        run: npm run build -- demo --base-href /ng-signal-forms-components/
+        run: npm run build -- demo --base-href ${{ env.BASE_HREF }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
