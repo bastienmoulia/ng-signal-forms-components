@@ -1,0 +1,17 @@
+<ngdsf-field-template [field]="field()" [params]="params()">
+  <ng-template>
+    <input
+      type="url"
+      [field]="field()"
+      [attr.id]="params().id"
+      [attr.placeholder]="params().placeholder"
+      [attr.disabled]="params().disabled"
+      [attr.readonly]="params().readonly"
+      [attr.minlength]="params().minlength"
+      [attr.maxlength]="params().maxlength"
+      [attr.pattern]="params().pattern"
+      [attr.autocomplete]="params().autocomplete ?? 'noop'"
+      [attr.size]="params().size"
+    />
+  </ng-template>
+</ngdsf-field-template>

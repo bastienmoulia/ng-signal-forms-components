@@ -1,0 +1,13 @@
+<ngdsf-field-template [field]="field()" [params]="params()">
+  <ng-template>
+    <input
+      type="range"
+      [field]="field()"
+      [attr.id]="params().id"
+      [attr.disabled]="params().disabled"
+      [attr.min]="params().min"
+      [attr.max]="params().max"
+      [attr.step]="params().step"
+    />
+  </ng-template>
+</ngdsf-field-template>

@@ -1,0 +1,16 @@
+<ngdsf-field-template [field]="field()" [params]="params()">
+  <ng-template>
+    <input
+      type="number"
+      [field]="field()"
+      [attr.id]="params().id"
+      [attr.placeholder]="params().placeholder"
+      [attr.disabled]="params().disabled"
+      [attr.readonly]="params().readonly"
+      [attr.min]="params().min"
+      [attr.max]="params().max"
+      [attr.step]="params().step"
+      [attr.autocomplete]="params().autocomplete ?? 'noop'"
+    />
+  </ng-template>
+</ngdsf-field-template>

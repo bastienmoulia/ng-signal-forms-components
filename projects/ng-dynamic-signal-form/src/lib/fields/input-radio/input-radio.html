@@ -1,0 +1,12 @@
+<ngdsf-field-template [field]="field()" [params]="params()">
+  <ng-template>
+    <input
+      type="radio"
+      [field]="field()"
+      [attr.id]="params().id"
+      [attr.disabled]="params().disabled"
+      [attr.name]="params().name"
+      [attr.value]="params().value"
+    />
+  </ng-template>
+</ngdsf-field-template>
