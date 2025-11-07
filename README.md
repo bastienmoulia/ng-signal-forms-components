@@ -1,65 +1,155 @@
-# NgSignalFormsComponents
+# ng-signal-forms-components
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.0-rc.0.
+Dynamic, signal-driven Angular form field components with a consistent template wrapper and a growing catalogue of HTML input types. This repository contains:
 
-## Demo
+- The component library: `ng-dynamic-signal-form`
+- A demo application showcasing all field types
 
-A live demo of the components is available at: https://bastienmoulia.github.io/ng-signal-forms-components/
+> Built for Angular v21 RC using standalone components, signals-based form state (`@angular/forms/signals`), and strict TypeScript.
 
-The demo is automatically deployed to GitHub Pages when changes are pushed to the main branch.
+## Features
 
-## Development server
+- 20+ input/select/textarea field components (text, email, date, time, number, checkbox, radio, range, file, color, month, week, datetime-local, search, tel, url, hidden, password, select, textarea)
+- Unified field template (`NgdsfFieldTemplate`) for label, placeholder and custom projected content
+- Strongly typed field enum (`NgdsfFieldType`) and params interfaces for per-field configuration
+- Signal-centric integration: each field receives a `() => FieldState` accessor for reactive state
+- Standalone, tree-shakeable Angular components (no NgModules)
+- Library build & demo app build via standard Angular CLI
 
-To start a local development server, run:
+## Live Demo
 
-```bash
-ng serve
-```
+https://bastienmoulia.github.io/ng-signal-forms-components/
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Installation (library)
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+The package is not yet published to npm (version `0.0.1`). To consume directly from source:
 
 ```bash
-ng generate --help
+git clone https://github.com/bastienmoulia/ng-signal-forms-components.git
+cd ng-signal-forms-components
+npm install
+ng build ng-dynamic-signal-form
 ```
 
-## Building
+Then reference the dist output (`dist/ng-dynamic-signal-form`) or use a workspace project reference.
 
-To build the project run:
+## Quick Usage
+
+Import the components you need (they are standalone) and define your form params:
+
+```ts
+import { Component } from '@angular/core';
+import { NgdsfFields, NgdsfFieldType, NgdsfFormParams } from 'ng-dynamic-signal-form';
+
+@Component({
+  selector: 'example-form',
+  imports: [NgdsfFields],
+  template: `
+    <form>
+      <ngdsf-fields [params]="params" [form]="formSignal" />
+    </form>
+  `,
+})
+export class ExampleFormComponent {
+  params: NgdsfFormParams = {
+    username: { type: NgdsfFieldType.InputText, label: 'Username', placeholder: 'Your name' },
+    email: { type: NgdsfFieldType.InputEmail, label: 'Email' },
+  };
+  // formSignal: define using @angular/forms/signals API
+  formSignal = /* your form signal */ null as any;
+}
+```
+
+Each concrete field component (e.g. `NgdsfInputText`) accepts:
+
+```ts
+params = {
+	label?: string;
+	placeholder?: string;
+	disabled?: boolean;
+	readonly?: boolean;
+	className?: string;
+	// plus field‑specific extras like minlength, maxlength, pattern etc.
+};
+```
+
+## Public API Surface
+
+Exported from `projects/ng-dynamic-signal-form/src/public-api.ts`:
+
+- `NgdsfFields` – orchestrates rendering based on a form signal structure
+- `NgdsfFieldTemplate` – wrapper/template component
+- All individual field components: `NgdsfInputText`, `NgdsfInputEmail`, `NgdsfInputDate`, ... `NgdsfTextarea`, `NgdsfSelect`
+- `NgdsfFieldType` enum & associated interfaces
+
+## Development
+
+Install dependencies and start the demo:
 
 ```bash
-ng build
+npm install
+npm start
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Navigate to `http://localhost:4200/`.
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### Library Build (watch)
 
 ```bash
-ng test
+npm run build-lib
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+### Full Build
 
 ```bash
-ng e2e
+npm run build
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### Testing
 
-## Additional Resources
+```bash
+npm test
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+The setup uses Angular CLI & Karma for unit tests. (No e2e configured.)
+
+## Publishing (manual)
+
+```bash
+ng build ng-dynamic-signal-form
+cd dist/ng-dynamic-signal-form
+npm publish --access public
+```
+
+Ensure peer dependencies match your target Angular version.
+
+## Deployment
+
+See `DEPLOYMENT.md` for GitHub Pages workflow details. The demo app is built with a base href of `/ng-signal-forms-components/`.
+
+## Contributing
+
+1. Fork & clone
+2. Create a feature branch
+3. Add/modify components (keep them standalone & signal-based)
+4. Add unit tests (`*.spec.ts` alongside component) & ensure `npm test` passes
+5. Open a pull request
+
+### Guidelines
+
+- Prefer signals over RxJS for local component state
+- Keep components focused; avoid large multipurpose components
+- Use `input()` functions instead of decorators
+- Avoid `@HostBinding` / `@HostListener`; use `host` metadata if needed
+
+## Roadmap
+
+- Validation helper components
+- Layout utilities (field groups, tabs)
+- Accessibility documentation & ARIA patterns
+- E2E testing with Playwright
+- Publishing the package to npm
+
+## License
+
+MIT

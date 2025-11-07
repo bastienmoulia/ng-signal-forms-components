@@ -9,5 +9,5 @@
       "ng-dynamic-signal-form": ["./projects/ng-dynamic-signal-form/src/public-api.ts"]
     }
   },
-  "include": ["src/**/*.ts", "projects/**/*.ts"]
+  "include": ["projects/**/*.ts"]
 }
