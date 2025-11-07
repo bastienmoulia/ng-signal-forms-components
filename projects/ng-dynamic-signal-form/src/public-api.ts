@@ -2,7 +2,6 @@
  * Public API Surface of ng-dynamic-signal-form
  */
 
-export * from './lib/ng-dynamic-signal-form';
 export * from './lib/fields/fields';
 export * from './lib/field-template/field-template';
 export * from './lib/fields/input-checkbox/input-checkbox';
