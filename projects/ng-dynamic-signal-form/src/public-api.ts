@@ -24,3 +24,5 @@ export * from './lib/fields/input-url/input-url';
 export * from './lib/fields/input-week/input-week';
 export * from './lib/fields/select/select';
 export * from './lib/fields/textarea/textarea';
+export * from './lib/validation/field-errors';
+export * from './lib/validation/form-errors';
