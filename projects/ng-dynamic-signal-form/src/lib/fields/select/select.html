@@ -8,11 +8,22 @@
       [attr.autocomplete]="'noop'"
       [class]="params().className"
     >
-      @if (params().options) { @for (option of params().options; track option.value) {
-      <option [value]="option.value" [attr.disabled]="option.disabled ? true : null">
-        {{ option.label }}
+      @if (params().options) { @for (item of params().options; track $index) { @if (item.type
+      === 'optgroup') {
+      <optgroup [label]="item.label" [attr.disabled]="item.disabled ? true : null">
+        @for (option of item.options; track option.value) {
+        <option [value]="option.value" [attr.disabled]="option.disabled ? true : null">
+          {{ option.label }}
+        </option>
+        }
+      </optgroup>
+      } @else if (item.type === 'hr') {
+      <hr />
+      } @else {
+      <option [value]="item.value" [attr.disabled]="item.disabled ? true : null">
+        {{ item.label }}
       </option>
-      } }
+      } } }
     </select>
   </ng-template>
 </ngdsf-field-template>

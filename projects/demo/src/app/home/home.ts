@@ -51,11 +51,36 @@ export class Home {
       className: 'select-field',
       options: [
         { value: '', label: 'Select a country' },
-        { value: 'us', label: 'United States' },
-        { value: 'uk', label: 'United Kingdom' },
-        { value: 'fr', label: 'France' },
-        { value: 'de', label: 'Germany' },
-        { value: 'es', label: 'Spain', disabled: true },
+        { type: 'hr' },
+        {
+          type: 'optgroup',
+          label: 'North America',
+          options: [
+            { value: 'us', label: 'United States' },
+            { value: 'ca', label: 'Canada' },
+            { value: 'mx', label: 'Mexico' },
+          ],
+        },
+        {
+          type: 'optgroup',
+          label: 'Europe',
+          options: [
+            { value: 'uk', label: 'United Kingdom' },
+            { value: 'fr', label: 'France' },
+            { value: 'de', label: 'Germany' },
+            { value: 'es', label: 'Spain', disabled: true },
+            { value: 'it', label: 'Italy' },
+          ],
+        },
+        {
+          type: 'optgroup',
+          label: 'Asia',
+          options: [
+            { value: 'jp', label: 'Japan' },
+            { value: 'cn', label: 'China' },
+            { value: 'in', label: 'India' },
+          ],
+        },
       ],
     },
     message: {
