@@ -23,11 +23,12 @@ export class Home {
   });
 
   formParams = signal<NgdsfFormParams>({
-    name: { type: NgdsfFieldType.InputText, label: 'Name', placeholder: 'Enter your name' },
+    name: { type: NgdsfFieldType.InputText, label: 'Name', placeholder: 'Enter your name', className: 'custom-input-class' },
     email: {
       type: NgdsfFieldType.InputEmail,
       label: 'Custom Email Label',
       placeholder: 'Enter your email',
+      className: 'email-input',
     },
     password: {
       type: NgdsfFieldType.InputPassword,
@@ -47,6 +48,7 @@ export class Home {
     country: {
       type: NgdsfFieldType.Select,
       label: 'Country',
+      className: 'select-field',
       options: [
         { value: '', label: 'Select a country' },
         { value: 'us', label: 'United States' },
@@ -61,6 +63,7 @@ export class Home {
       label: 'Message',
       placeholder: 'Enter your message',
       rows: 5,
+      className: 'textarea-field',
     },
   });
 

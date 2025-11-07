@@ -29,4 +29,11 @@ describe('NgdsfFieldTemplate', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should accept className parameter', () => {
+    const params = { className: 'custom-class' };
+    fixture.componentRef.setInput('params', params);
+    fixture.detectChanges();
+    expect(component.params().className).toBe('custom-class');
+  });
 });

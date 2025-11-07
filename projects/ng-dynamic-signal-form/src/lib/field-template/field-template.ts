@@ -8,6 +8,7 @@ export interface NgdsfFieldParams {
   placeholder?: string;
   disabled?: boolean;
   readonly?: boolean;
+  className?: string;
   [key: string]: any;
 }
 

@@ -3,3 +3,27 @@
   flex-direction: row;
   gap: 1rem;
 }
+
+.custom-input-class {
+  border: 2px solid blue;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.email-input {
+  border: 2px solid green;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.select-field {
+  border: 2px solid purple;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.textarea-field {
+  border: 2px solid orange;
+  border-radius: 4px;
+  padding: 8px;
+}

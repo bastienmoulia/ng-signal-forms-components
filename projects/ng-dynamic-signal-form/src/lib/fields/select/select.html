@@ -6,6 +6,7 @@
       [attr.multiple]="params().multiple"
       [attr.size]="params().size"
       [attr.autocomplete]="'noop'"
+      [class]="params().className"
     >
       @if (params().options) { @for (option of params().options; track option.value) {
       <option [value]="option.value" [attr.disabled]="option.disabled ? true : null">
