@@ -26,3 +26,6 @@ export * from './lib/fields/select/select';
 export * from './lib/fields/textarea/textarea';
 export * from './lib/validation/field-errors';
 export * from './lib/validation/form-errors';
+export * from './lib/layout/field-group';
+export * from './lib/layout/tabs';
+export * from './lib/layout/tab-panel';
