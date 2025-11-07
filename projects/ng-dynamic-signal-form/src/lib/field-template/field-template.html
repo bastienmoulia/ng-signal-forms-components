@@ -2,7 +2,7 @@
 <label>
   @if (params().label) {
   {{ params().label }}
-  {{ field()().required ? '*' : '' }}
+  {{ field()().required?.() ? '*' : '' }}
   } @if (contentTemplate()) {
   <ng-container *ngTemplateOutlet="contentTemplate()" />
   }
