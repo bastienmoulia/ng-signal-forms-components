@@ -10,25 +10,13 @@ export interface NgdsfFieldErrorsParams {
   selector: 'ngdsf-field-errors',
   template: `
     @if (shouldShowErrors()) {
-      <ul [class]="params().className || 'field-errors'">
-        @for (error of field()().errors(); track $index) {
-          <li class="field-error">{{ error.message }}</li>
-        }
-      </ul>
+    <ul [class]="params().className">
+      @for (error of field()().errors(); track $index) {
+      <li>{{ error.message }}</li>
+      }
+    </ul>
     }
   `,
-  styles: [`
-    .field-errors {
-      list-style: none;
-      padding: 0;
-      margin: 0.25rem 0 0 0;
-      color: #d32f2f;
-      font-size: 0.875rem;
-    }
-    .field-error {
-      margin: 0.125rem 0;
-    }
-  `],
 })
 export class NgdsfFieldErrors {
   field = input.required<() => FieldState<any, any>>();
@@ -39,14 +27,14 @@ export class NgdsfFieldErrors {
     if (!fieldAccessor) {
       return false;
     }
-    
+
     const fieldState = fieldAccessor();
     if (!fieldState || !fieldState.invalid || !fieldState.invalid()) {
       return false;
     }
 
     const showWhen = this.params().showWhen || 'touched';
-    
+
     switch (showWhen) {
       case 'always':
         return true;

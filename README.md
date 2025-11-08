@@ -124,6 +124,7 @@ npm run e2e
 E2E tests use Playwright. For more information, see the [e2e/README.md](./e2e/README.md).
 
 Additional E2E commands:
+
 - `npm run e2e:ui` - Run tests in interactive UI mode
 - `npm run e2e:headed` - Run tests in headed mode (see browser)
 - `npm run e2e:report` - View test report
@@ -235,18 +236,22 @@ jobs:
 ### Troubleshooting
 
 **Package name already exists:**
+
 - Choose a unique package name in `package.json`
 - Or request ownership of the existing package from npm support
 
 **Authentication errors:**
+
 - Run `npm login` and verify your credentials
 - Ensure your npm account has 2FA configured if required
 
 **Version conflicts:**
+
 - Ensure you've bumped the version number
 - You cannot republish the same version
 
 **Missing files in package:**
+
 - Check the `files` array in `package.json`
 - Verify `.npmignore` is not excluding necessary files
 
@@ -272,14 +277,6 @@ See `DEPLOYMENT.md` for GitHub Pages workflow details. The demo app is built wit
 - Keep components focused; avoid large multipurpose components
 - Use `input()` functions instead of decorators
 - Avoid `@HostBinding` / `@HostListener`; use `host` metadata if needed
-
-## Roadmap
-
-- Validation helper components
-- Layout utilities (field groups, tabs)
-- Accessibility documentation & ARIA patterns
-- E2E testing with Playwright
-- Publishing the package to npm
 
 ## License
 

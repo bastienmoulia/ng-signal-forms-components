@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 import { Field, FieldState } from '@angular/forms/signals';
-import { NgdsfFieldParams, NgdsfFieldTemplate } from '../../field-template/field-template';
+import { NgdsfFieldParams, NgdsfFieldTemplate } from '../../layout/field-template';
 
 export interface NgdsfInputNumberParams extends NgdsfFieldParams {
   min?: number;

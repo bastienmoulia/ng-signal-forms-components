@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { NgdsfFieldParams, NgdsfFieldTemplate } from '../../field-template/field-template';
+import { NgdsfFieldParams, NgdsfFieldTemplate } from '../../layout/field-template';
 import { Field, FieldState } from '@angular/forms/signals';
 
 export interface NgdsfInputPasswordParams extends NgdsfFieldParams {
