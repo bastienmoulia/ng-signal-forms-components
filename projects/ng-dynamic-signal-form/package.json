@@ -1,6 +1,27 @@
 {
   "name": "ng-dynamic-signal-form",
   "version": "0.0.1",
+  "description": "Dynamic, signal-driven Angular form field components with a consistent template wrapper and a growing catalogue of HTML input types",
+  "author": "Bastien Moulia",
+  "license": "MIT",
+  "homepage": "https://github.com/bastienmoulia/ng-signal-forms-components#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bastienmoulia/ng-signal-forms-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bastienmoulia/ng-signal-forms-components/issues"
+  },
+  "keywords": [
+    "angular",
+    "forms",
+    "signals",
+    "dynamic-forms",
+    "form-components",
+    "validation",
+    "typescript",
+    "angular21"
+  ],
   "peerDependencies": {
     "@angular/common": "^21.0.0-rc.1",
     "@angular/core": "^21.0.0-rc.1"

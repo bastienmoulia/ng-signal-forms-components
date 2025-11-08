@@ -1,5 +1,5 @@
 import { Component, computed, input } from '@angular/core';
-import { NgdsfFieldParams } from '../field-template/field-template';
+import { NgdsfFieldParams } from '../layout/field-template';
 import { NgdsfInputText } from './input-text/input-text';
 import { NgdsfInputEmail } from './input-email/input-email';
 import { NgdsfInputDate } from './input-date/input-date';

@@ -3,7 +3,7 @@
  */
 
 export * from './lib/fields/fields';
-export * from './lib/field-template/field-template';
+export * from './lib/layout/field-template';
 export * from './lib/fields/input-checkbox/input-checkbox';
 export * from './lib/fields/input-color/input-color';
 export * from './lib/fields/input-date/input-date';
@@ -24,3 +24,8 @@ export * from './lib/fields/input-url/input-url';
 export * from './lib/fields/input-week/input-week';
 export * from './lib/fields/select/select';
 export * from './lib/fields/textarea/textarea';
+export * from './lib/validation/field-errors';
+export * from './lib/validation/form-errors';
+export * from './lib/layout/field-group';
+export * from './lib/layout/tabs';
+export * from './lib/layout/tab-panel';

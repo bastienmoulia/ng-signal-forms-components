@@ -15,7 +15,24 @@ export interface NgdsfFieldParams {
 @Component({
   selector: 'ngdsf-field-template',
   imports: [NgTemplateOutlet],
-  templateUrl: './field-template.html',
+  template: `
+    @if(field() !== undefined && field()() !== undefined) {
+    <label>
+      @if (params().label) {
+      {{ params().label }}
+      {{ field()().required?.() ? '*' : '' }}
+      } @if (contentTemplate()) {
+      <ng-container *ngTemplateOutlet="contentTemplate()" />
+      }
+    </label>
+    @if (field()().touched() && field()().invalid()) {
+    <ul>
+      @for (error of field()().errors(); track $index) {
+      <li>{{ error.message }}</li>
+      }
+    </ul>
+    } }
+  `,
 })
 export class NgdsfFieldTemplate {
   field = input.required<() => FieldState<any, string | number>>();
