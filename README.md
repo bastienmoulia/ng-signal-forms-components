@@ -1,4 +1,4 @@
-# ng-signal-forms-components
+# ng-dynamic-signal-form
 
 Dynamic, signal-driven Angular form field components with a consistent template wrapper and a growing catalogue of HTML input types. This repository contains:
 
@@ -18,15 +18,15 @@ Dynamic, signal-driven Angular form field components with a consistent template 
 
 ## Live Demo
 
-https://bastienmoulia.github.io/ng-signal-forms-components/
+https://bastienmoulia.github.io/ng-dynamic-signal-form/
 
 ## Installation (library)
 
 The package is not yet published to npm (version `0.0.1`). To consume directly from source:
 
 ```bash
-git clone https://github.com/bastienmoulia/ng-signal-forms-components.git
-cd ng-signal-forms-components
+git clone https://github.com/bastienmoulia/ng-dynamic-signal-form.git
+cd ng-dynamic-signal-form
 npm install
 ng build ng-dynamic-signal-form
 ```
@@ -261,7 +261,7 @@ This library is built with accessibility in mind, following WCAG 2.1 guidelines 
 
 ## Deployment
 
-See `DEPLOYMENT.md` for GitHub Pages workflow details. The demo app is built with a base href of `/ng-signal-forms-components/`.
+See `DEPLOYMENT.md` for GitHub Pages workflow details. The demo app is built with a base href of `/ng-dynamic-signal-form/`.
 
 ## Contributing
 

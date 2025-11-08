@@ -1,14 +1,14 @@
 {
-  "name": "ng-signal-forms-components",
+  "name": "ng-dynamic-signal-form",
   "version": "0.0.0",
   "description": "",
-  "homepage": "https://github.com/bastienmoulia/ng-signal-forms-components#readme",
+  "homepage": "https://github.com/bastienmoulia/ng-dynamic-signal-form#readme",
   "bugs": {
-    "url": "https://github.com/bastienmoulia/ng-signal-forms-components/issues"
+    "url": "https://github.com/bastienmoulia/ng-dynamic-signal-form/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bastienmoulia/ng-signal-forms-components.git"
+    "url": "git+https://github.com/bastienmoulia/ng-dynamic-signal-form.git"
   },
   "license": "MIT",
   "author": "Bastien Moulia",

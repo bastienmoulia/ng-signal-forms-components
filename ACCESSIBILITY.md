@@ -1,4 +1,4 @@
-# Accessibility Guide for ng-signal-forms-components
+# Accessibility Guide for ng-dynamic-signal-form
 
 This guide outlines accessibility best practices and ARIA patterns implemented in the `ng-dynamic-signal-form` library.
 
@@ -13,7 +13,7 @@ The library is designed with accessibility in mind, following WCAG 2.1 Level AA 
 All input field components (`NgdsfInputText`, `NgdsfInputEmail`, etc.) support standard HTML5 accessibility features:
 
 - **Labels**: Use the `label` parameter to provide visible labels for all form fields
-- **Required Fields**: Automatically display an asterisk (*) for required fields
+- **Required Fields**: Automatically display an asterisk (\*) for required fields
 - **Placeholder Text**: Use `placeholder` for additional hints (not a replacement for labels)
 - **Disabled State**: Use `disabled` parameter to mark fields as disabled
 - **Readonly State**: Use `readonly` parameter for read-only fields
@@ -22,9 +22,9 @@ All input field components (`NgdsfInputText`, `NgdsfInputEmail`, etc.) support s
 params: NgdsfFormParams = {
   email: {
     type: NgdsfFieldType.InputEmail,
-    label: 'Email Address',  // Visible label
-    placeholder: 'user@example.com',  // Additional hint
-  }
+    label: 'Email Address', // Visible label
+    placeholder: 'user@example.com', // Additional hint
+  },
 };
 ```
 
@@ -36,9 +36,9 @@ Always provide unique `id` values for form fields to ensure proper label associa
 params: NgdsfFormParams = {
   email: {
     type: NgdsfFieldType.InputEmail,
-    id: 'user-email',  // Unique identifier
+    id: 'user-email', // Unique identifier
     label: 'Email Address',
-  }
+  },
 };
 ```
 
@@ -62,7 +62,7 @@ Configuration options:
 
 ```typescript
 fieldErrorsParams: NgdsfFieldErrorsParams = {
-  showWhen: 'touched',  // 'touched', 'dirty', or 'always'
+  showWhen: 'touched', // 'touched', 'dirty', or 'always'
   className: 'custom-error-class',
 };
 ```
@@ -77,9 +77,9 @@ The `NgdsfFormErrors` component provides a summary of all form validation errors
 
 ```typescript
 // In your template
-<ngdsf-form-errors 
-  [form]="form" 
-  [params]="{ title: 'Please correct the following errors:' }" 
+<ngdsf-form-errors
+  [form]="form"
+  [params]="{ title: 'Please correct the following errors:' }"
 />
 ```
 
@@ -90,7 +90,7 @@ The `NgdsfFormErrors` component provides a summary of all form validation errors
 The `NgdsfFieldGroup` component uses semantic HTML (`<fieldset>` and `<legend>`) for accessible field grouping:
 
 ```typescript
-<ngdsf-field-group [params]="{ 
+<ngdsf-field-group [params]="{
   title: 'Personal Information',
   description: 'Enter your personal details below'
 }">
@@ -100,6 +100,7 @@ The `NgdsfFieldGroup` component uses semantic HTML (`<fieldset>` and `<legend>`)
 ```
 
 Benefits:
+
 - Screen readers announce the group title when entering/leaving the group
 - Provides context for related fields
 - Semantic HTML improves document structure
@@ -151,10 +152,18 @@ Choose the most appropriate field type for better accessibility:
 
 ```typescript
 // Use specific input types
-{ type: NgdsfFieldType.InputEmail }  // For email addresses
-{ type: NgdsfFieldType.InputTel }    // For phone numbers
-{ type: NgdsfFieldType.InputUrl }    // For URLs
-{ type: NgdsfFieldType.InputDate }   // For dates
+{
+  type: NgdsfFieldType.InputEmail;
+} // For email addresses
+{
+  type: NgdsfFieldType.InputTel;
+} // For phone numbers
+{
+  type: NgdsfFieldType.InputUrl;
+} // For URLs
+{
+  type: NgdsfFieldType.InputDate;
+} // For dates
 ```
 
 ### 3. Provide Clear Error Messages
@@ -190,6 +199,7 @@ Ensure fields appear in a logical order in the DOM. The default tab order follow
 ### 6. Test with Keyboard Navigation
 
 Ensure your forms can be completed using only the keyboard:
+
 - Tab: Move between fields
 - Shift+Tab: Move backwards
 - Enter: Submit forms
@@ -198,6 +208,7 @@ Ensure your forms can be completed using only the keyboard:
 ### 7. Test with Screen Readers
 
 Test your forms with popular screen readers:
+
 - NVDA (Windows, free)
 - JAWS (Windows)
 - VoiceOver (macOS/iOS)
@@ -206,16 +217,19 @@ Test your forms with popular screen readers:
 ## Color and Contrast
 
 The default styles provide sufficient color contrast ratios:
+
 - Error messages: Red text (#d32f2f) on white background (contrast ratio > 4.5:1)
 - Active tab indicator: Blue (#1976d2) on white (contrast ratio > 4.5:1)
 
 When customizing styles with `className`, ensure you maintain adequate contrast ratios:
+
 - Normal text: At least 4.5:1
 - Large text (18pt+ or 14pt+ bold): At least 3:1
 
 ## Dynamic Content
 
 When form fields or validation errors change dynamically:
+
 - Changes are automatically announced to screen readers
 - Focus management is handled appropriately
 - Error summaries update in real-time
