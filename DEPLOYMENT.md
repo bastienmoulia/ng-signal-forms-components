@@ -4,11 +4,12 @@ This document describes the GitHub Actions workflow for deploying the demo appli
 
 ## Workflow Overview
 
-The deployment workflow (`.github/workflows/deploy-demo.yml`) consists of three jobs:
+The deployment workflow (`.github/workflows/deploy-demo.yml`) consists of four jobs:
 
 1. **Test**: Runs unit tests to ensure code quality
-2. **Build**: Builds both the library and demo application
-3. **Deploy**: Deploys the demo application to GitHub Pages
+2. **E2E**: Runs end-to-end tests using Playwright
+3. **Build**: Builds both the library and demo application
+4. **Deploy**: Deploys the demo application to GitHub Pages
 
 ## Triggering the Workflow
 
@@ -54,8 +55,14 @@ https://bastienmoulia.github.io/ng-signal-forms-components/
 
 ### Workflow Fails on Test Job
 - Check the test logs in the Actions tab
-- Run tests locally with `npm test -- --run`
+- Run tests locally with `npm test`
 - Fix any failing tests before pushing
+
+### Workflow Fails on E2E Job
+- Check the E2E test logs in the Actions tab
+- Run E2E tests locally with `npm run e2e`
+- Review the Playwright report artifact in the Actions tab for detailed test results
+- Fix any failing E2E tests before pushing
 
 ### Workflow Fails on Build Job
 - Ensure both the library and demo app build successfully locally
