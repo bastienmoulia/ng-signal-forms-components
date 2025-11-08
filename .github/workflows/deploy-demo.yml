@@ -34,6 +34,9 @@ jobs:
       - name: Install dependencies
         run: npm ci --ignore-scripts
 
+      - name: Build library
+        run: npm run build -- ng-dynamic-signal-form
+
       - name: Run tests
         run: npm test
 
@@ -51,6 +54,9 @@ jobs:
 
       - name: Install dependencies
         run: npm ci --ignore-scripts
+
+      - name: Build library
+        run: npm run build -- ng-dynamic-signal-form
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
