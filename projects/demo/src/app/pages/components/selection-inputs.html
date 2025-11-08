@@ -1,0 +1,183 @@
+<div class="doc-page">
+  <h1>Selection Input Components</h1>
+  <p>Components for selecting from predefined options.</p>
+
+  <section class="doc-section">
+    <h2>Select (Dropdown)</h2>
+    <p>Dropdown menu for selecting from a list of options.</p>
+
+    <div class="demo-container">
+      <h3>Live Demo</h3>
+      <form class="demo-form">
+        <ngdsf-select
+          [field]="countryField"
+          [params]="{
+            label: 'Country',
+            options: [
+              { value: '', label: 'Select a country' },
+              { type: 'hr' },
+              {
+                type: 'optgroup',
+                label: 'North America',
+                options: [
+                  { value: 'us', label: 'United States' },
+                  { value: 'ca', label: 'Canada' },
+                  { value: 'mx', label: 'Mexico' }
+                ]
+              },
+              {
+                type: 'optgroup',
+                label: 'Europe',
+                options: [
+                  { value: 'uk', label: 'United Kingdom' },
+                  { value: 'fr', label: 'France' },
+                  { value: 'de', label: 'Germany' }
+                ]
+              }
+            ]
+          }"
+        />
+      </form>
+      <div class="demo-output">
+        <strong>Selected:</strong> <code>{{ model().country }}</code>
+      </div>
+    </div>
+
+    <div class="code-example">
+      <h4>Usage</h4>
+      <pre><code>&lt;ngdsf-select
+  [field]="() =&gt; form.country()"
+  [params]="&#123;
+    label: 'Country',
+    options: [
+      &#123; value: '', label: 'Select...' &#125;,
+      &#123; value: 'us', label: 'United States' &#125;,
+      &#123; value: 'ca', label: 'Canada' &#125;
+    ]
+  &#125;"
+/&gt;</code></pre>
+    </div>
+
+    <div class="api-table">
+      <h4>Option Types</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Properties</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>option</code></td>
+            <td>value, label, disabled</td>
+            <td>Single option</td>
+          </tr>
+          <tr>
+            <td><code>optgroup</code></td>
+            <td>label, options[], disabled</td>
+            <td>Grouped options</td>
+          </tr>
+          <tr>
+            <td><code>hr</code></td>
+            <td>-</td>
+            <td>Visual separator</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2>Input Checkbox</h2>
+    <p>Checkbox for boolean values or multi-select scenarios.</p>
+
+    <div class="demo-container">
+      <h3>Live Demo</h3>
+      <form class="demo-form">
+        <ngdsf-input-checkbox
+          [field]="termsField"
+          [params]="{
+            label: 'I accept the terms and conditions'
+          }"
+        />
+        <ngdsf-input-checkbox
+          [field]="newsletterField"
+          [params]="{
+            label: 'Subscribe to newsletter'
+          }"
+        />
+      </form>
+      <div class="demo-output">
+        <pre><code>{{ { terms: model().terms, newsletter: model().newsletter } | json }}</code></pre>
+      </div>
+    </div>
+
+    <div class="code-example">
+      <h4>Usage</h4>
+      <pre><code>&lt;ngdsf-input-checkbox
+  [field]="() =&gt; form.terms()"
+  [params]="&#123;
+    label: 'I accept the terms and conditions'
+  &#125;"
+/&gt;</code></pre>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2>Input Radio</h2>
+    <p>Radio buttons for selecting a single option from a group.</p>
+
+    <div class="demo-container">
+      <h3>Live Demo</h3>
+      <form class="demo-form">
+        <div style="margin-bottom: 0.5rem;">
+          <strong>Gender:</strong>
+        </div>
+        <ngdsf-input-radio
+          [field]="genderField"
+          [params]="{
+            label: 'Male',
+            value: 'male'
+          }"
+        />
+        <ngdsf-input-radio
+          [field]="genderField"
+          [params]="{
+            label: 'Female',
+            value: 'female'
+          }"
+        />
+        <ngdsf-input-radio
+          [field]="genderField"
+          [params]="{
+            label: 'Other',
+            value: 'other'
+          }"
+        />
+      </form>
+      <div class="demo-output">
+        <strong>Selected:</strong> <code>{{ model().gender }}</code>
+      </div>
+    </div>
+
+    <div class="code-example">
+      <h4>Usage</h4>
+      <pre><code>&lt;ngdsf-input-radio
+  [field]="() =&gt; form.gender()"
+  [params]="&#123;
+    label: 'Male',
+    value: 'male'
+  &#125;"
+/&gt;
+&lt;ngdsf-input-radio
+  [field]="() =&gt; form.gender()"
+  [params]="&#123;
+    label: 'Female',
+    value: 'female'
+  &#125;"
+/&gt;</code></pre>
+    </div>
+  </section>
+</div>

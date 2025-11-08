@@ -1,0 +1,56 @@
+<div class="doc-page">
+  <h1>Layout Components</h1>
+  <p>Components for organizing and structuring forms.</p>
+
+  <section class="doc-section">
+    <h2>Field Group</h2>
+    <p>Group related fields together visually.</p>
+
+    <div class="code-example">
+      <h4>Usage</h4>
+      <pre><code>import &#123; NgdsfFieldGroup &#125; from 'ng-dynamic-signal-form';
+
+&lt;ngdsf-field-group [title]="'Personal Information'"&gt;
+  &lt;ngdsf-input-text ... /&gt;
+  &lt;ngdsf-input-email ... /&gt;
+&lt;/ngdsf-field-group&gt;</code></pre>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2>Tabs</h2>
+    <p>Organize form sections into tabs.</p>
+
+    <div class="code-example">
+      <h4>Usage</h4>
+      <pre><code>import &#123; NgdsfTabs, NgdsfTabPanel &#125; from 'ng-dynamic-signal-form';
+
+&lt;ngdsf-tabs&gt;
+  &lt;ngdsf-tab-panel [title]="'Basic Info'"&gt;
+    &lt;!-- Form fields --&gt;
+  &lt;/ngdsf-tab-panel&gt;
+  &lt;ngdsf-tab-panel [title]="'Address'"&gt;
+    &lt;!-- Form fields --&gt;
+  &lt;/ngdsf-tab-panel&gt;
+&lt;/ngdsf-tabs&gt;</code></pre>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2>Field Template</h2>
+    <p>The base template wrapper used by all field components. Provides consistent structure with label, error display, and content projection.</p>
+
+    <div class="code-example">
+      <h4>Usage</h4>
+      <pre><code>import &#123; NgdsfFieldTemplate &#125; from 'ng-dynamic-signal-form';
+
+&lt;ngdsf-field-template
+  [field]="() =&gt; form.myField()"
+  [params]="&#123; label: 'My Field' &#125;"
+&gt;
+  &lt;!-- Custom input element --&gt;
+  &lt;input type="text" ... /&gt;
+&lt;/ngdsf-field-template&gt;</code></pre>
+    </div>
+  </section>
+</div>

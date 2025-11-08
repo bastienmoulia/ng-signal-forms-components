@@ -1,0 +1,179 @@
+<div class="doc-page">
+  <h1>Field Types Reference</h1>
+  <p>Complete reference of all available field types in the NgdsfFieldType enum.</p>
+
+  <section class="doc-section">
+    <h2>NgdsfFieldType Enum</h2>
+    <p>The NgdsfFieldType enum defines all available field types:</p>
+    
+    <div class="api-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Enum Value</th>
+            <th>Component</th>
+            <th>HTML Input Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>InputText</code></td>
+            <td>NgdsfInputText</td>
+            <td>text</td>
+            <td>Single-line text input</td>
+          </tr>
+          <tr>
+            <td><code>InputEmail</code></td>
+            <td>NgdsfInputEmail</td>
+            <td>email</td>
+            <td>Email address input</td>
+          </tr>
+          <tr>
+            <td><code>InputPassword</code></td>
+            <td>NgdsfInputPassword</td>
+            <td>password</td>
+            <td>Password input (masked)</td>
+          </tr>
+          <tr>
+            <td><code>InputSearch</code></td>
+            <td>NgdsfInputSearch</td>
+            <td>search</td>
+            <td>Search input</td>
+          </tr>
+          <tr>
+            <td><code>InputTel</code></td>
+            <td>NgdsfInputTel</td>
+            <td>tel</td>
+            <td>Telephone number input</td>
+          </tr>
+          <tr>
+            <td><code>InputUrl</code></td>
+            <td>NgdsfInputUrl</td>
+            <td>url</td>
+            <td>URL input</td>
+          </tr>
+          <tr>
+            <td><code>InputNumber</code></td>
+            <td>NgdsfInputNumber</td>
+            <td>number</td>
+            <td>Numeric input</td>
+          </tr>
+          <tr>
+            <td><code>InputRange</code></td>
+            <td>NgdsfInputRange</td>
+            <td>range</td>
+            <td>Slider input</td>
+          </tr>
+          <tr>
+            <td><code>InputDate</code></td>
+            <td>NgdsfInputDate</td>
+            <td>date</td>
+            <td>Date picker</td>
+          </tr>
+          <tr>
+            <td><code>InputTime</code></td>
+            <td>NgdsfInputTime</td>
+            <td>time</td>
+            <td>Time picker</td>
+          </tr>
+          <tr>
+            <td><code>InputDatetimeLocal</code></td>
+            <td>NgdsfInputDatetimeLocal</td>
+            <td>datetime-local</td>
+            <td>Date and time picker</td>
+          </tr>
+          <tr>
+            <td><code>InputMonth</code></td>
+            <td>NgdsfInputMonth</td>
+            <td>month</td>
+            <td>Month and year picker</td>
+          </tr>
+          <tr>
+            <td><code>InputWeek</code></td>
+            <td>NgdsfInputWeek</td>
+            <td>week</td>
+            <td>Week and year picker</td>
+          </tr>
+          <tr>
+            <td><code>InputCheckbox</code></td>
+            <td>NgdsfInputCheckbox</td>
+            <td>checkbox</td>
+            <td>Checkbox input</td>
+          </tr>
+          <tr>
+            <td><code>InputRadio</code></td>
+            <td>NgdsfInputRadio</td>
+            <td>radio</td>
+            <td>Radio button input</td>
+          </tr>
+          <tr>
+            <td><code>InputColor</code></td>
+            <td>NgdsfInputColor</td>
+            <td>color</td>
+            <td>Color picker</td>
+          </tr>
+          <tr>
+            <td><code>InputFile</code></td>
+            <td>NgdsfInputFile</td>
+            <td>file</td>
+            <td>File upload</td>
+          </tr>
+          <tr>
+            <td><code>InputHidden</code></td>
+            <td>NgdsfInputHidden</td>
+            <td>hidden</td>
+            <td>Hidden input</td>
+          </tr>
+          <tr>
+            <td><code>Select</code></td>
+            <td>NgdsfSelect</td>
+            <td>-</td>
+            <td>Dropdown selection</td>
+          </tr>
+          <tr>
+            <td><code>Textarea</code></td>
+            <td>NgdsfTextarea</td>
+            <td>-</td>
+            <td>Multi-line text input</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2>Usage with NgdsfFields</h2>
+    <p>When using the NgdsfFields component, specify the field type in your params object:</p>
+    <pre><code>import &#123; NgdsfFieldType, NgdsfFormParams &#125; from 'ng-dynamic-signal-form';
+
+formParams: NgdsfFormParams = &#123;
+  username: &#123;
+    type: NgdsfFieldType.InputText,
+    label: 'Username'
+  &#125;,
+  email: &#123;
+    type: NgdsfFieldType.InputEmail,
+    label: 'Email'
+  &#125;,
+  birthdate: &#123;
+    type: NgdsfFieldType.InputDate,
+    label: 'Birth Date'
+  &#125;
+&#125;;</code></pre>
+  </section>
+
+  <section class="doc-section">
+    <h2>Direct Component Usage</h2>
+    <p>You can also import and use components directly without NgdsfFields:</p>
+    <pre><code>import &#123; NgdsfInputText, NgdsfInputEmail &#125; from 'ng-dynamic-signal-form';
+
+&#64;Component(&#123;
+  imports: [NgdsfInputText, NgdsfInputEmail],
+  template: `
+    &lt;ngdsf-input-text [field]="() =&gt; form.username()" /&gt;
+    &lt;ngdsf-input-email [field]="() =&gt; form.email()" /&gt;
+  `
+&#125;)</code></pre>
+  </section>
+</div>

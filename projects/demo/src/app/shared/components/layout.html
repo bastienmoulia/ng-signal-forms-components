@@ -1,0 +1,84 @@
+<div class="layout">
+  <header class="header">
+    <div class="header-content">
+      <h1 class="logo">
+        <a routerLink="/">ng-dynamic-signal-form</a>
+      </h1>
+      <nav class="header-nav">
+        <a
+          href="https://github.com/bastienmoulia/ng-signal-forms-components"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="github-link"
+        >
+          GitHub
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="main-container">
+    <aside class="sidebar">
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <h2 class="nav-section-title">Getting Started</h2>
+          <ul class="nav-list">
+            <li>
+              <a routerLink="/getting-started" routerLinkActive="active">Overview</a>
+            </li>
+            <li>
+              <a routerLink="/installation" routerLinkActive="active">Installation</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav-section">
+          <h2 class="nav-section-title">Components</h2>
+          <ul class="nav-list">
+            <li>
+              <a routerLink="/components/text-inputs" routerLinkActive="active">Text Inputs</a>
+            </li>
+            <li>
+              <a routerLink="/components/number-inputs" routerLinkActive="active">Number Inputs</a>
+            </li>
+            <li>
+              <a routerLink="/components/date-time-inputs" routerLinkActive="active"
+                >Date & Time</a
+              >
+            </li>
+            <li>
+              <a routerLink="/components/selection-inputs" routerLinkActive="active"
+                >Selection Inputs</a
+              >
+            </li>
+            <li>
+              <a routerLink="/components/other-inputs" routerLinkActive="active">Other Inputs</a>
+            </li>
+            <li>
+              <a routerLink="/components/validation" routerLinkActive="active">Validation</a>
+            </li>
+            <li>
+              <a routerLink="/components/layout" routerLinkActive="active">Layout Components</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav-section">
+          <h2 class="nav-section-title">API Reference</h2>
+          <ul class="nav-list">
+            <li>
+              <a routerLink="/api/field-types" routerLinkActive="active">Field Types</a>
+            </li>
+            <li>
+              <a routerLink="/api/field-params" routerLinkActive="active">Field Parameters</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <router-outlet />
+    </main>
+  </div>
+</div>

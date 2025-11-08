@@ -1,0 +1,105 @@
+<div class="doc-page">
+  <h1>Getting Started</h1>
+
+  <section class="doc-section">
+    <h2>Overview</h2>
+    <p>
+      <strong>ng-dynamic-signal-form</strong> is a dynamic, signal-driven Angular form field
+      component library built for Angular v21. It provides 20+ input/select/textarea field
+      components with a consistent template wrapper and strongly-typed configuration.
+    </p>
+  </section>
+
+  <section class="doc-section">
+    <h2>Features</h2>
+    <ul>
+      <li>
+        <strong>20+ Field Components</strong> - Text, email, date, time, number, checkbox, radio,
+        range, file, color, and more
+      </li>
+      <li>
+        <strong>Signal-Based</strong> - Built with Angular's signals API for reactive state
+        management
+      </li>
+      <li>
+        <strong>Type-Safe</strong> - Strongly typed field configurations and parameters
+      </li>
+      <li>
+        <strong>Standalone Components</strong> - No NgModules required, fully tree-shakeable
+      </li>
+      <li>
+        <strong>Unified Template</strong> - Consistent field wrapper with label, placeholder, and
+        custom content projection
+      </li>
+      <li>
+        <strong>Validation Support</strong> - Built-in validation components for displaying field
+        and form errors
+      </li>
+      <li>
+        <strong>Layout Components</strong> - Field groups, tabs, and tab panels for organizing
+        forms
+      </li>
+    </ul>
+  </section>
+
+  <section class="doc-section">
+    <h2>Quick Example</h2>
+    <pre><code>import &#123; Component &#125; from '&#64;angular/core';
+import &#123; form, required, email &#125; from '&#64;angular/forms/signals';
+import &#123; NgdsfFields, NgdsfFieldType, NgdsfFormParams &#125; from 'ng-dynamic-signal-form';
+
+&#64;Component(&#123;
+  selector: 'my-form',
+  imports: [NgdsfFields],
+  template: `
+    &lt;form (submit)="onSubmit($event)"&gt;
+      &lt;ngdsf-fields [params]="formParams" [form]="myForm" /&gt;
+      &lt;button type="submit"&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
+  `,
+&#125;)
+export class MyForm &#123;
+  model = signal(&#123;
+    name: '',
+    email: '',
+  &#125;);
+
+  formParams: NgdsfFormParams = &#123;
+    name: &#123; 
+      type: NgdsfFieldType.InputText, 
+      label: 'Name', 
+      placeholder: 'Enter your name' 
+    &#125;,
+    email: &#123; 
+      type: NgdsfFieldType.InputEmail, 
+      label: 'Email', 
+      placeholder: 'Enter your email' 
+    &#125;,
+  &#125;;
+
+  myForm = form(this.model, (p) =&gt; &#123;
+    required(p.name, &#123; message: 'Name is required' &#125;);
+    required(p.email, &#123; message: 'Email is required' &#125;);
+    email(p.email, &#123; message: 'Enter a valid email' &#125;);
+  &#125;);
+
+  onSubmit(event: Event) &#123;
+    event.preventDefault();
+    submit(this.myForm, async () =&gt; &#123;
+      console.log('Form submitted:', this.model());
+    &#125;);
+  &#125;
+&#125;</code></pre>
+  </section>
+
+  <section class="doc-section">
+    <h2>Next Steps</h2>
+    <ul>
+      <li>
+        <a routerLink="/installation">Install the library</a> in your Angular project
+      </li>
+      <li>Explore the <a routerLink="/components/text-inputs">component documentation</a></li>
+      <li>Check out the <a routerLink="/api/field-types">API reference</a></li>
+    </ul>
+  </section>
+</div>

@@ -1,0 +1,216 @@
+<div class="doc-page">
+  <h1>Date & Time Input Components</h1>
+  <p>Date and time input components provide various ways to select dates, times, and combinations thereof.</p>
+
+  <section class="doc-section">
+    <h2>Input Date</h2>
+    <p>Date picker for selecting a specific date.</p>
+
+    <div class="demo-container">
+      <h3>Live Demo</h3>
+      <form class="demo-form">
+        <ngdsf-input-date
+          [field]="dateField"
+          [params]="{
+            label: 'Select Date',
+            placeholder: 'yyyy-mm-dd'
+          }"
+        />
+      </form>
+      <div class="demo-output">
+        <strong>Value:</strong> <code>{{ model().date }}</code>
+      </div>
+    </div>
+
+    <div class="code-example">
+      <h4>Usage</h4>
+      <pre><code>&lt;ngdsf-input-date
+  [field]="() =&gt; form.date()"
+  [params]="&#123;
+    label: 'Select Date',
+    min: '2024-01-01',
+    max: '2025-12-31'
+  &#125;"
+/&gt;</code></pre>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2>Input Time</h2>
+    <p>Time picker for selecting a specific time of day.</p>
+
+    <div class="demo-container">
+      <h3>Live Demo</h3>
+      <form class="demo-form">
+        <ngdsf-input-time
+          [field]="timeField"
+          [params]="{
+            label: 'Select Time',
+            placeholder: 'hh:mm'
+          }"
+        />
+      </form>
+      <div class="demo-output">
+        <strong>Value:</strong> <code>{{ model().time }}</code>
+      </div>
+    </div>
+
+    <div class="code-example">
+      <h4>Usage</h4>
+      <pre><code>&lt;ngdsf-input-time
+  [field]="() =&gt; form.time()"
+  [params]="&#123;
+    label: 'Select Time',
+    min: '09:00',
+    max: '17:00',
+    step: 900
+  &#125;"
+/&gt;</code></pre>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2>Input Datetime-Local</h2>
+    <p>Combined date and time picker.</p>
+
+    <div class="demo-container">
+      <h3>Live Demo</h3>
+      <form class="demo-form">
+        <ngdsf-input-datetime-local
+          [field]="datetimeField"
+          [params]="{
+            label: 'Select Date & Time',
+            placeholder: 'yyyy-mm-ddThh:mm'
+          }"
+        />
+      </form>
+      <div class="demo-output">
+        <strong>Value:</strong> <code>{{ model().datetime }}</code>
+      </div>
+    </div>
+
+    <div class="code-example">
+      <h4>Usage</h4>
+      <pre><code>&lt;ngdsf-input-datetime-local
+  [field]="() =&gt; form.datetime()"
+  [params]="&#123;
+    label: 'Select Date & Time'
+  &#125;"
+/&gt;</code></pre>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2>Input Month</h2>
+    <p>Month and year picker.</p>
+
+    <div class="demo-container">
+      <h3>Live Demo</h3>
+      <form class="demo-form">
+        <ngdsf-input-month
+          [field]="monthField"
+          [params]="{
+            label: 'Select Month',
+            placeholder: 'yyyy-mm'
+          }"
+        />
+      </form>
+      <div class="demo-output">
+        <strong>Value:</strong> <code>{{ model().month }}</code>
+      </div>
+    </div>
+
+    <div class="code-example">
+      <h4>Usage</h4>
+      <pre><code>&lt;ngdsf-input-month
+  [field]="() =&gt; form.month()"
+  [params]="&#123;
+    label: 'Select Month'
+  &#125;"
+/&gt;</code></pre>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2>Input Week</h2>
+    <p>Week and year picker.</p>
+
+    <div class="demo-container">
+      <h3>Live Demo</h3>
+      <form class="demo-form">
+        <ngdsf-input-week
+          [field]="weekField"
+          [params]="{
+            label: 'Select Week',
+            placeholder: 'yyyy-Www'
+          }"
+        />
+      </form>
+      <div class="demo-output">
+        <strong>Value:</strong> <code>{{ model().week }}</code>
+      </div>
+    </div>
+
+    <div class="code-example">
+      <h4>Usage</h4>
+      <pre><code>&lt;ngdsf-input-week
+  [field]="() =&gt; form.week()"
+  [params]="&#123;
+    label: 'Select Week'
+  &#125;"
+/&gt;</code></pre>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2>Common Parameters</h2>
+    <div class="api-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>label</code></td>
+            <td>string</td>
+            <td>Field label text</td>
+          </tr>
+          <tr>
+            <td><code>placeholder</code></td>
+            <td>string</td>
+            <td>Placeholder text</td>
+          </tr>
+          <tr>
+            <td><code>min</code></td>
+            <td>string</td>
+            <td>Minimum allowed value</td>
+          </tr>
+          <tr>
+            <td><code>max</code></td>
+            <td>string</td>
+            <td>Maximum allowed value</td>
+          </tr>
+          <tr>
+            <td><code>step</code></td>
+            <td>number</td>
+            <td>Step increment (for time: seconds)</td>
+          </tr>
+          <tr>
+            <td><code>disabled</code></td>
+            <td>boolean</td>
+            <td>Disable the field</td>
+          </tr>
+          <tr>
+            <td><code>readonly</code></td>
+            <td>boolean</td>
+            <td>Make field read-only</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,83 @@
+<div class="doc-page">
+  <h1>Validation Components</h1>
+  <p>Components for displaying validation errors in your forms.</p>
+
+  <section class="doc-section">
+    <h2>Field Errors</h2>
+    <p>Display validation errors for individual fields.</p>
+
+    <div class="demo-container">
+      <h3>Live Demo</h3>
+      <form class="demo-form">
+        <div>
+          <ngdsf-input-text
+            [field]="usernameField"
+            [params]="{
+              label: 'Username',
+              placeholder: 'Enter username'
+            }"
+          />
+          <ngdsf-field-errors [field]="usernameField" />
+        </div>
+
+        <div>
+          <ngdsf-input-email
+            [field]="emailField"
+            [params]="{
+              label: 'Email',
+              placeholder: 'Enter email'
+            }"
+          />
+          <ngdsf-field-errors [field]="emailField" />
+        </div>
+      </form>
+    </div>
+
+    <div class="code-example">
+      <h4>Usage</h4>
+      <pre><code>&lt;ngdsf-input-text
+  [field]="() =&gt; form.username()"
+  [params]="&#123; label: 'Username' &#125;"
+/&gt;
+&lt;ngdsf-field-errors [field]="() =&gt; form.username()" /&gt;</code></pre>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2>Form Errors</h2>
+    <p>Display all validation errors for the entire form.</p>
+
+    <div class="demo-container">
+      <h3>Live Demo</h3>
+      <form class="demo-form">
+        <ngdsf-form-errors [form]="demoForm" />
+      </form>
+    </div>
+
+    <div class="code-example">
+      <h4>Usage</h4>
+      <pre><code>&lt;form&gt;
+  &lt;!-- form fields --&gt;
+  &lt;ngdsf-form-errors [form]="myForm" /&gt;
+&lt;/form&gt;</code></pre>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2>Validation Setup</h2>
+    <p>Set up validations using Angular's signals-based forms API:</p>
+    <pre><code>import &#123; form, required, email, minLength &#125; from '&#64;angular/forms/signals';
+
+model = signal(&#123;
+  username: '',
+  email: ''
+&#125;);
+
+myForm = form(this.model, (p) =&gt; &#123;
+  required(p.username, &#123; message: 'Username is required' &#125;);
+  minLength(p.username, 3, &#123; message: 'Min 3 characters' &#125;);
+  required(p.email, &#123; message: 'Email is required' &#125;);
+  email(p.email, &#123; message: 'Invalid email' &#125;);
+&#125;);</code></pre>
+  </section>
+</div>

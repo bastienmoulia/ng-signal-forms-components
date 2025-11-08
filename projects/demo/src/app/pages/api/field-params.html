@@ -1,0 +1,317 @@
+<div class="doc-page">
+  <h1>Field Parameters Reference</h1>
+  <p>Complete reference of all available field parameters and their types.</p>
+
+  <section class="doc-section">
+    <h2>Base Field Parameters (NgdsfFieldParams)</h2>
+    <p>All field components inherit these common parameters:</p>
+
+    <div class="api-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Parameter</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Default</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>label</code></td>
+            <td>string</td>
+            <td>Field label text</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td><code>placeholder</code></td>
+            <td>string</td>
+            <td>Placeholder text</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td><code>disabled</code></td>
+            <td>boolean</td>
+            <td>Whether field is disabled</td>
+            <td>false</td>
+          </tr>
+          <tr>
+            <td><code>readonly</code></td>
+            <td>boolean</td>
+            <td>Whether field is read-only</td>
+            <td>false</td>
+          </tr>
+          <tr>
+            <td><code>className</code></td>
+            <td>string</td>
+            <td>Custom CSS class name(s)</td>
+            <td>-</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2>Text Input Parameters</h2>
+    <p>Additional parameters for text-based inputs (InputText, InputEmail, InputPassword, etc.):</p>
+
+    <div class="api-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Parameter</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>minlength</code></td>
+            <td>number</td>
+            <td>Minimum character length</td>
+          </tr>
+          <tr>
+            <td><code>maxlength</code></td>
+            <td>number</td>
+            <td>Maximum character length</td>
+          </tr>
+          <tr>
+            <td><code>pattern</code></td>
+            <td>string</td>
+            <td>Validation regex pattern</td>
+          </tr>
+          <tr>
+            <td><code>autocomplete</code></td>
+            <td>string</td>
+            <td>HTML autocomplete attribute</td>
+          </tr>
+          <tr>
+            <td><code>size</code></td>
+            <td>number</td>
+            <td>Visible width in characters</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2>Number Input Parameters</h2>
+    <p>Additional parameters for InputNumber and InputRange:</p>
+
+    <div class="api-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Parameter</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>min</code></td>
+            <td>number</td>
+            <td>Minimum value</td>
+          </tr>
+          <tr>
+            <td><code>max</code></td>
+            <td>number</td>
+            <td>Maximum value</td>
+          </tr>
+          <tr>
+            <td><code>step</code></td>
+            <td>number</td>
+            <td>Increment/decrement step</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2>Date/Time Input Parameters</h2>
+    <p>Additional parameters for date and time inputs:</p>
+
+    <div class="api-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Parameter</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>min</code></td>
+            <td>string</td>
+            <td>Minimum date/time value</td>
+          </tr>
+          <tr>
+            <td><code>max</code></td>
+            <td>string</td>
+            <td>Maximum date/time value</td>
+          </tr>
+          <tr>
+            <td><code>step</code></td>
+            <td>number</td>
+            <td>Step increment (in seconds for time)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2>Select Parameters</h2>
+    <p>Parameters specific to NgdsfSelect:</p>
+
+    <div class="api-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Parameter</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>options</code></td>
+            <td>NgdsfSelectItem[]</td>
+            <td>Array of options, optgroups, or separators</td>
+          </tr>
+          <tr>
+            <td><code>multiple</code></td>
+            <td>boolean</td>
+            <td>Allow multiple selection</td>
+          </tr>
+          <tr>
+            <td><code>size</code></td>
+            <td>number</td>
+            <td>Number of visible options</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Select Option Types</h4>
+    <pre><code>// Simple option
+&#123; value: 'us', label: 'United States' &#125;
+
+// Disabled option
+&#123; value: 'es', label: 'Spain', disabled: true &#125;
+
+// Option group
+&#123;
+  type: 'optgroup',
+  label: 'Europe',
+  options: [
+    &#123; value: 'uk', label: 'United Kingdom' &#125;,
+    &#123; value: 'fr', label: 'France' &#125;
+  ]
+&#125;
+
+// Horizontal separator
+&#123; type: 'hr' &#125;</code></pre>
+  </section>
+
+  <section class="doc-section">
+    <h2>Textarea Parameters</h2>
+    <p>Parameters specific to NgdsfTextarea:</p>
+
+    <div class="api-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Parameter</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>rows</code></td>
+            <td>number</td>
+            <td>Number of visible text rows</td>
+          </tr>
+          <tr>
+            <td><code>cols</code></td>
+            <td>number</td>
+            <td>Number of visible text columns</td>
+          </tr>
+          <tr>
+            <td><code>wrap</code></td>
+            <td>string</td>
+            <td>Text wrapping ('hard' | 'soft')</td>
+          </tr>
+          <tr>
+            <td><code>minlength</code></td>
+            <td>number</td>
+            <td>Minimum character length</td>
+          </tr>
+          <tr>
+            <td><code>maxlength</code></td>
+            <td>number</td>
+            <td>Maximum character length</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2>File Input Parameters</h2>
+    <p>Parameters specific to NgdsfInputFile:</p>
+
+    <div class="api-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Parameter</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>accept</code></td>
+            <td>string</td>
+            <td>Accepted file types (e.g., 'image/*', '.pdf')</td>
+          </tr>
+          <tr>
+            <td><code>multiple</code></td>
+            <td>boolean</td>
+            <td>Allow multiple file selection</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <h2>Radio Button Parameters</h2>
+    <p>Parameters specific to NgdsfInputRadio:</p>
+
+    <div class="api-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Parameter</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>value</code></td>
+            <td>string | number</td>
+            <td>The value this radio button represents</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
