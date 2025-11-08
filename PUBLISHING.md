@@ -29,6 +29,7 @@ npm version patch
 ```
 
 Examples:
+
 - Bug fixes
 - Documentation updates
 - Performance improvements
@@ -44,6 +45,7 @@ npm version minor
 ```
 
 Examples:
+
 - New field components
 - New validation helpers
 - New layout utilities
@@ -59,6 +61,7 @@ npm version major
 ```
 
 Examples:
+
 - Removing or renaming public APIs
 - Changing component signatures
 - Updating to new major Angular version
@@ -74,15 +77,18 @@ Update the CHANGELOG.md (if it exists):
 ## [0.0.2] - 2024-12-07
 
 ### Added
+
 - NgdsfFieldErrors component for field validation display
 - NgdsfFormErrors component for form-level error summary
 - NgdsfFieldGroup component for grouping related fields
 - NgdsfTabs and NgdsfTabPanel components for tabbed layouts
 
 ### Changed
+
 - Updated README with new component documentation
 
 ### Fixed
+
 - Minor bug fixes in field template
 ```
 
@@ -112,6 +118,7 @@ ls -la
 ```
 
 You should see:
+
 - `package.json` - Package manifest
 - `README.md` - Documentation
 - `*.d.ts` - TypeScript type definitions
@@ -176,7 +183,7 @@ npm install ng-dynamic-signal-form
 
 ### 8. Create GitHub Release
 
-1. Go to: https://github.com/bastienmoulia/ng-signal-forms-components/releases/new
+1. Go to: https://github.com/bastienmoulia/ng-dynamic-signal-form/releases/new
 2. Select the version tag created earlier (e.g., `v0.0.2`)
 3. Add release title: `v0.0.2`
 4. Add release notes (copy from CHANGELOG.md)
@@ -208,6 +215,7 @@ git push --tags
 ### Error: "You do not have permission to publish"
 
 **Solution:**
+
 1. Verify you're logged in: `npm whoami`
 2. Check package access on npmjs.com
 3. Contact the package owner to grant you access
@@ -267,26 +275,26 @@ on:
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20'
           registry-url: 'https://registry.npmjs.org'
-      
+
       - name: Install dependencies
         run: npm ci
-      
+
       - name: Run tests
         run: npm test
-      
+
       - name: Build library
         run: npx ng build ng-dynamic-signal-form --configuration production
-      
+
       - name: Publish to npm
         run: |
           cd dist/ng-dynamic-signal-form
@@ -312,6 +320,7 @@ Keep a CHANGELOG.md file documenting all changes. Use the [Keep a Changelog](htt
 ### 2. Write Release Notes
 
 Always write meaningful release notes for GitHub releases. Include:
+
 - What's new
 - What changed
 - Breaking changes (if any)
@@ -320,6 +329,7 @@ Always write meaningful release notes for GitHub releases. Include:
 ### 3. Test Before Publishing
 
 Always test the package locally before publishing. Install it in a sample project and verify:
+
 - Imports work correctly
 - Components render properly
 - Types are available
@@ -328,6 +338,7 @@ Always test the package locally before publishing. Install it in a sample projec
 ### 4. Follow Semantic Versioning
 
 Strictly follow semantic versioning to avoid breaking user applications:
+
 - MAJOR: Breaking changes
 - MINOR: New features, backward compatible
 - PATCH: Bug fixes, backward compatible
@@ -344,6 +355,7 @@ npm audit
 ### 6. Deprecate Gradually
 
 When removing features:
+
 1. Mark as deprecated in a minor version
 2. Update documentation with migration guide
 3. Remove in next major version
@@ -362,6 +374,7 @@ export class NgdsfOldComponent {
 ### Long-Term Support (LTS)
 
 Consider providing LTS for major versions:
+
 - Security fixes for 12 months after major release
 - Critical bug fixes for 6 months
 - New features only in current major version
@@ -369,6 +382,7 @@ Consider providing LTS for major versions:
 ### Responding to Issues
 
 Monitor GitHub issues and npm issues regularly:
+
 - Respond to bug reports within 48 hours
 - Label issues appropriately (bug, feature, question)
 - Link PRs to related issues

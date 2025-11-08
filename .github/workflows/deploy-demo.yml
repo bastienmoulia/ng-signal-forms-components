@@ -73,6 +73,9 @@ jobs:
           retention-days: 30
 
   build:
+    needs:
+      - test
+      - e2e
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

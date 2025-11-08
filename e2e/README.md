@@ -1,6 +1,6 @@
 # End-to-End Tests with Playwright
 
-This directory contains end-to-end tests for the ng-signal-forms-components demo application using Playwright.
+This directory contains end-to-end tests for the ng-dynamic-signal-form demo application using Playwright.
 
 ## Setup
 
@@ -50,6 +50,7 @@ npx playwright test --project=webkit
 ### `form-validation.spec.ts`
 
 Tests for form validation functionality:
+
 - Field validation rules
 - Error message display
 - Form submission
@@ -58,6 +59,7 @@ Tests for form validation functionality:
 ### `accessibility.spec.ts`
 
 Tests for accessibility compliance:
+
 - Keyboard navigation
 - Screen reader support
 - ARIA attributes
@@ -86,12 +88,14 @@ Tests for accessibility compliance:
 ### Selectors
 
 Prefer stable selectors:
+
 - `page.locator('button[type="submit"]')` - by attribute
 - `page.locator('text=Submit')` - by text content
 - `page.getByRole('button', { name: 'Submit' })` - by ARIA role
 - `page.getByLabel('Email')` - by label
 
 Avoid:
+
 - CSS classes that might change
 - Deeply nested selectors
 - XPath when possible
@@ -99,6 +103,7 @@ Avoid:
 ### Waiting
 
 Playwright auto-waits for elements, but you can also:
+
 - `await page.waitForSelector('selector')`
 - `await page.waitForLoadState('networkidle')`
 - `await expect(locator).toBeVisible()`
