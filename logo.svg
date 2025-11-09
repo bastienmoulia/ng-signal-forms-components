@@ -1,36 +1,37 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
-  <!-- Background circle with gradient -->
   <defs>
-    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+    <!-- Angular-style gradient from darker blue to lighter blue -->
+    <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" style="stop-color:#1976d2;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#1565c0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#42a5f5;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="shieldGradientLight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2196f3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#64b5f6;stop-opacity:1" />
     </linearGradient>
   </defs>
   
-  <circle cx="100" cy="100" r="90" fill="url(#bgGradient)"/>
-  
-  <!-- Angular-style "A" shape with form representation -->
-  <g fill="white" stroke="none">
-    <!-- Left side of A -->
-    <polygon points="80,140 90,80 95,80 105,140 95,140 93,125 82,125 80,140"/>
-    <polygon points="83,118 92,118 87.5,92"/>
+  <!-- Angular-style shield shape -->
+  <g>
+    <!-- Main shield background (darker gradient) -->
+    <polygon points="100,25 40,55 50,140 100,175 150,140 160,55" fill="url(#shieldGradient)"/>
     
-    <!-- Right side - form fields representation -->
-    <g>
-      <!-- Form field 1 -->
-      <rect x="110" y="85" width="35" height="8" rx="2" opacity="0.9"/>
-      <!-- Form field 2 -->
-      <rect x="110" y="100" width="30" height="8" rx="2" opacity="0.9"/>
-      <!-- Form field 3 -->
-      <rect x="110" y="115" width="35" height="8" rx="2" opacity="0.9"/>
-      <!-- Form field 4 -->
-      <rect x="110" y="130" width="25" height="8" rx="2" opacity="0.9"/>
-    </g>
+    <!-- Right side of shield (lighter gradient) -->
+    <polygon points="100,25 160,55 150,140 100,175" fill="url(#shieldGradientLight)"/>
   </g>
   
-  <!-- Signal waves around the top -->
-  <g fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.6">
-    <path d="M 70 55 Q 75 45, 80 55"/>
-    <path d="M 120 55 Q 115 45, 110 55"/>
+  <!-- Letter "A" in white -->
+  <g fill="white">
+    <!-- Main A shape -->
+    <polygon points="100,60 70,135 78,135 83,120 117,120 122,135 130,135"/>
+    <!-- Horizontal bar of A representing forms -->
+    <rect x="88" y="110" width="24" height="6"/>
+  </g>
+  
+  <!-- Form fields representation (horizontal lines on the right side) -->
+  <g fill="white" opacity="0.9">
+    <rect x="110" y="95" width="30" height="3" rx="1.5"/>
+    <rect x="110" y="105" width="25" height="3" rx="1.5"/>
+    <rect x="110" y="115" width="30" height="3" rx="1.5"/>
   </g>
 </svg>
