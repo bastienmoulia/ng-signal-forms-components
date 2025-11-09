@@ -28,10 +28,23 @@
 .logo a {
   color: white;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 .logo a:hover {
   opacity: 0.9;
+}
+
+.logo-image {
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+
+.logo-text {
+  display: inline-block;
 }
 
 .header-nav {

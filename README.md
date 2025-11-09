@@ -1,4 +1,7 @@
-# ng-dynamic-signal-form
+<div align="center">
+  <img src="logo.svg" alt="ng-dynamic-signal-form logo" width="150" height="150">
+  <h1>ng-dynamic-signal-form</h1>
+</div>
 
 Dynamic, signal-driven Angular form field components with a consistent template wrapper and a growing catalogue of HTML input types. This repository contains:
 
